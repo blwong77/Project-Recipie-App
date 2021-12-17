@@ -6,14 +6,14 @@ function MakeRecipe({ recipes, setRecipes }) {
   };
   const recipeElements = recipes.map(
     ({ name, cuisine, photo, ingredients, preparation }, index) => (
-      <tr key={name.replace(" ", "").toLowerCase()}>
+      <tr key={name.id}>
         <td>{name}</td>
         <td>{cuisine}</td>
         <td>
           <img src={photo} alt={photo} />
         </td>
-        <td>{ingredients}</td>
-        <td>{preparation}</td>
+        <td className="content_td"><p>{ingredients}</p></td>
+        <td className="content_td"><p>{preparation}</p></td>
         <td>
           <button name="delete" onClick={() => handleDelete(index)}>
             Delete
