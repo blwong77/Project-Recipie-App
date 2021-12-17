@@ -21,6 +21,8 @@
     "eject": "react-scripts eject",
     "start": "react-scripts start",
     "start:solution": "npm run -it docker:build && npm run docker:run",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "test:solution": "npm run docker:build && npm run docker:test"
   },
