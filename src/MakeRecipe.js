@@ -1,7 +1,28 @@
 import React from "react";
 
-function MakeRecipe ({recipe}) {
-
+function MakeRecipe({ recipes, setRecipes }) {
+  const handleDelete = (id) => {
+    setRecipes([...recipes].filter((recipe, index) => id !== index));
+  };
+  const recipeElements = recipes.map(
+    ({ name, cuisine, photo, ingredients, preparation }, index) => (
+      <tr key={name.replace(" ", "").toLowerCase()}>
+        <td>{name}</td>
+        <td>{cuisine}</td>
+        <td>
+          <img src={photo} alt={photo} />
+        </td>
+        <td>{ingredients}</td>
+        <td>{preparation}</td>
+        <td>
+          <button name="delete" onClick={() => handleDelete(index)}>
+            Delete
+          </button>
+        </td>
+      </tr>
+    )
+  );
+  return <>{recipeElements}</>;
 }
 
-export default MakeRecipe
+export default MakeRecipe;
