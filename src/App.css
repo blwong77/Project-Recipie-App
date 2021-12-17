@@ -85,9 +85,11 @@ input {
 table thead tr th {
   width: 10%;
 }
+
 table thead tr th:nth-child(4) {
   width: 30%;
 }
+
 table thead tr th:nth-child(5) {
   width: 30%;
 }
